@@ -1,5 +1,5 @@
 terraform {
-  required_version = "~> 1.5.0"  # Test if Renovate touches this.
+  required_version = "~> 1.13.0"  # Test if Renovate touches this.
 
   required_providers {
     azurerm = {
