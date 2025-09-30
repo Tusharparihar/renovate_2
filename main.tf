@@ -4,7 +4,7 @@ terraform {
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
-      version = "~> 3.50.0"  # Old version—Renovate should want to update to latest (~4.x).
+      version = "~> 3.117.0"  # Old version—Renovate should want to update to latest (~4.x).
     }
   }
 }
