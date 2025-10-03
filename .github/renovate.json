@@ -1,1 +1,25 @@
-.
+{
+  "extends": ["config:base"],
+  "prHourlyLimit": 5,
+  "branchConcurrentLimit": 10,
+  "dependencyDashboard": true,
+  "packageRules": [
+    {
+      "matchPackageNames": ["hashicorp/terraform"],
+      "groupName": "terraform core updates",
+      "rangeStrategy": "widen",
+      "prHourlyLimit": 2
+    },
+    {
+      "matchPackagePatterns": ["^hashicorp/azurerm$", "^hashicorp/random$", "^hashicorp/null$"],
+      "groupName": "terraform provider updates",
+      "rangeStrategy": "n-2",
+      "prHourlyLimit": 3
+    }
+  ],
+  "terraform": {
+    "enabled": true,
+    "fileMatch": ["^.*\\.tf$"],
+    "ignoreUnstable": true
+  }
+}
