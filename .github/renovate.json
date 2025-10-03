@@ -1,1 +1,14 @@
-
+{
+  "packageRules": [
+    {
+      "matchPackagePatterns": ["^hashicorp/terraform$"],
+      "groupName": "terraform core updates",
+      "rangeStrategy": "widen"
+    },
+    {
+      "matchPackagePatterns": ["^hashicorp/azurerm$", "^hashicorp/random$", "^hashicorp/null$"],
+      "groupName": "terraform provider updates",
+      "rangeStrategy": "n-2"
+    }
+  ]
+}
