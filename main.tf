@@ -1,20 +1,11 @@
 terraform {
-  required_version = "~> 1.5.0"  # Test if Renovate touches this.
-
-  required_providers {
-    azurerm = {
-      source  = "hashicorp/azurerm"
-      version = "~> 3.50.0"  # Old version—Renovate should want to update to latest (~4.x).
-    }
-  }
+  required_version = ">= 1.5.0, < 1.8.0"
 }
 
 provider "azurerm" {
-  features {}
+  version = "~> 3.80.0"
 }
 
-# Dummy resource (won't deploy)
-resource "azurerm_resource_group" "test" {
-  name     = "test-rg"
-  location = "West Europe"
+provider "random" {
+  version = ">= 3.5.0, < 3.8.0"
 }
